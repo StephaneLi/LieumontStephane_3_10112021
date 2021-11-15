@@ -15,8 +15,8 @@
 <body>
   <header>
     <div class="container container--flex">
-      <a class="btn btn--icon" href="#">Retour<i class="material-icons-outlined">arrow_back</i></a>
-      <h1 id="main-logo"><img width="160" srcset="./images/logo/ohmyfood.png, ./images/logo/ohmyfood@2x.svg 2x" src="./images/logo/ohmyfood@2x.svg" alt="logo ohmyfood"></h1> 
+      <a class="btn btn--icon hide" href="/">Retour<i class="material-icons-outlined">arrow_back</i></a>
+      <a id="main-logo" href="/"><img width="160" srcset="./images/logo/ohmyfood.png, ./images/logo/ohmyfood@2x.svg 2x" src="./images/logo/ohmyfood@2x.svg" alt="logo ohmyfood"></a> 
     </div>
   </header>
   <main id="accueil">
@@ -27,14 +27,14 @@
     </section>
     <section id="section-cta" class="bg--greylight">      
       <div class="container">
-        <h2 class="home-title">Réservez le menu qui vous convient</h2>
+        <h1 class="home-title">Réservez le menu qui vous convient</h1>
         <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
         <a href="#" class="btn">Explorer nos restaurants</a>
       </div>
     </section>
     <section id="section-features">
       <div class="container">
-        <h2 class="home-title">Fonctionnement</h2>
+        <h2>Fonctionnement</h2>
         <ol class="features-list">
           <li class="features-list__item"><a href="#"><i class="material-icons">phone_iphone</i>Choisissez un restaurant</a></li>
           <li class="features-list__item"><a href="#"><i class="material-icons">format_list_bulleted</i>Composez votre menu</a></li>
@@ -44,7 +44,7 @@
     </section>
     <section id="section-restaurants" class="bg--greylight">
       <div class="container">
-        <h2 class="home-title">Restaurants</h2>
+        <h2>Restaurants</h2>
         <ul class="list-cards">
           <li class="card card--new">
             <a href="#">
@@ -56,9 +56,10 @@
                   <h3>La palette du goût</h3>
                   <p>Ménilmontant</p>
                 </div>
-                <form class="card__control">
-                  <button class="card__button"><i class="material-icons">favorite_border</i></button>
-                </form>
+                <div class="favorite">
+                  <input type="checkbox" name="favorite" value="false">
+                  <i class="material-icons">favorite_border</i>
+                </div>
               </div>
             </a>
           </li>
@@ -72,14 +73,15 @@
                   <h3>La note enchantée</h3>
                   <p>Charonne</p>
                 </div>
-                <form class="card__control">
-                  <button class="card__button"><i class="material-icons">favorite_border</i></button>
-                </form>
+                <div class="favorite">
+                  <input type="checkbox" name="favorite" value="false">
+                  <i class="material-icons">favorite_border</i>
+                </div>
               </div>
             </a>
           </li>
           <li class="card">
-            <a href="#">
+            <a href="a_la_française.html">
               <div class="card__cover">
                 <img width="400" src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française">
               </div>
@@ -88,9 +90,10 @@
                   <h3>À la française</h3>
                   <p>Cité Rouge</p>
                 </div>
-                <form class="card__control">
-                  <button class="card__button"><i class="material-icons">favorite_border</i></button>
-                </form>
+                <div class="favorite">
+                  <input type="checkbox" name="favorite" value="false">
+                  <i class="material-icons">favorite_border</i>
+                </div>
               </div>
             </a>
           </li>
@@ -104,9 +107,10 @@
                   <h3>Le délice des sens</h3>
                   <p>Folie-Méricourt</p>
                 </div>
-                <form class="card__control">
-                  <button class="card__button"><i class="material-icons">favorite_border</i></button>
-                </form>
+                <div class="favorite">
+                  <input type="checkbox" name="favorite" value="false">
+                  <i class="material-icons">favorite_border</i>
+                </div>
               </div>
             </a>
           </li>
@@ -123,7 +127,7 @@
         <li><a href="#"><i class="material-icons">restaurant</i>Proposer un restaurant</a></li>
         <li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
         <li><a href="#">Mentions légales</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="mailto:stephane1920@gmail.com">Contact</a></li>
       </ul>
     </div>
   </footer>  

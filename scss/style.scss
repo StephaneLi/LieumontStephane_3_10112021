@@ -60,9 +60,16 @@ header {
     margin: 0px calc-space(1);
     z-index: 1;
   }
+
+  #main-logo {
+    padding: calc-space(2) 0;
+  }
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   flex: 1 1 auto;
   overflow: hidden;
 }
@@ -109,8 +116,8 @@ ul, ol {
   margin:0;
 }
 
-h2 {
-  @include font-face(Shrikhand, 800, 'normal', 1.5rem);
+h1 {
+  @include font-face(Shrikhand, 500, 'normal', 1.7rem);
   margin-top:0;
 
   &.home-title {
@@ -157,6 +164,60 @@ h2 {
 
 #section-features {
   padding: calc-space(5) 0;
+}
+
+#restaurant {
+  position: relative;
+  padding-top:250px;
+  &__cover {
+    z-index: -1;
+    img {
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+#form-restaurant {
+  border-radius: $border-radius $border-radius 0 0;
+  background: $background-greylight;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  flex: 1 1 auto;
+  padding: calc-space(4) calc-space(3);
+  padding-bottom: calc-space(8);
+
+  &__submit {
+    margin: 0 auto;
+  }
+
+  &__title {
+    display:flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    &::after {
+      content:"";
+      display: block;
+      margin-top:5px;
+      margin-bottom:calc-space(2);
+      width:40px;
+      border-bottom: 3px solid $background-success;
+    }
+  }
 }
 
 /** CLASSES **/
@@ -235,6 +296,10 @@ h2 {
   }
 }
 
+.hide {
+  display:none!important;
+}
+
 .btn {
   position: relative;
   display: inline-block;
@@ -248,6 +313,8 @@ h2 {
   background: $secondary;
   background: linear-gradient(0deg, $primary 0%, $secondary 100%);
   padding: 15px 20px;
+  border: none;
+  min-width: 200px;
   z-index: 1;
 
   &::before {
@@ -312,6 +379,22 @@ h2 {
         }
       }
     }
+  }
+}
+
+.favorite {
+  position: relative;
+  [type="checkbox"] {
+    position: absolute;
+    margin:0;
+    display: block;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 }
 
@@ -383,11 +466,6 @@ h2 {
     }
   }
 
-  &__button {
-    border: none;
-    background: none;
-  }
-
   &--new {
     &::after {
       position: absolute;
@@ -401,6 +479,79 @@ h2 {
       border-radius: 2px;
       box-shadow: $shadow-items;
       color:$success;
+    }
+  }
+}
+
+.dishes-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc-space(1.5);
+  margin-bottom: calc-space(4);
+
+  h3, p {
+    margin:0;
+    margin-bottom: 5px;
+  }
+
+  .dish {
+    padding: 0;
+    background: white;
+    border-radius: $border-radius;
+    box-shadow: $shadow-items;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &__desc {
+      padding: 10px 15px;
+    }
+
+    &__select {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+
+      &__checkbox {
+        position: relative;
+        height: 100%;
+        width: 65px;
+      }
+
+      p {
+        font-weight: 600;
+        margin-bottom: 10px;
+        margin-right: 20px;
+      }
+
+      [type="checkbox"] {
+        margin:0;
+        display: block;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top:0;
+          left: 0;          
+          width: 100%;
+          height: 100%;
+          border: none!important;
+          background-color: $background-success;
+        }
+
+        &:checked::before {
+          background-color: black;
+        }
+      }
     }
   }
 }
