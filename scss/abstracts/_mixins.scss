@@ -1,0 +1,6 @@
+@mixin font-face($font-name, $weight: normal, $style: normal, $size: 1rem) {
+  font-family: quote($font-name) , sans-serif;
+  font-weight: $weight;
+  font-style: $style;
+  font-size: $size;
+}
