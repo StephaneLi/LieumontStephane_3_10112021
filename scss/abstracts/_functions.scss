@@ -1,0 +1,3 @@
+@function calc-space($multiple) {
+  @return $base-spacing * $multiple;
+}
