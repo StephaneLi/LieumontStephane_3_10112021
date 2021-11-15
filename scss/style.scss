@@ -3,8 +3,7 @@
 @import './abstracts/mixins';
 @import './abstracts/functions';
 
-/* import reset & global SCSS */
-@import './core/normalize';
+/* import global SCSS */
 @import './core/base';
 
 /* import Layout SCSS */
@@ -21,5 +20,3 @@
 @import './components/buttons';
 @import './components/cards';
 @import './components/dishes';
-
-
