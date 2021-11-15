@@ -13,19 +13,19 @@
     flex: 1 1 40%;
     min-width: $card-min-width;
     max-width: $card-max-width;
-  
+    box-shadow: $shadow-items;
+    border-radius: $border-radius;
+    max-height: $card-max-height;
+    justify-content: flex-start;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
     a {
-      color:inherit;
-      box-shadow: $shadow-items;
-      border-radius: $border-radius;
-      max-height: $card-max-height;
-      justify-content: flex-start;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
+      color:inherit!important;
     }
-  
+    
     &__cover{
       overflow: hidden;
       width: 100%;
