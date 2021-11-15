@@ -168,7 +168,7 @@ footer .foot-title svg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  min-width: 100%;
   object-fit: cover;
 }
 
@@ -278,6 +278,7 @@ footer .foot-title svg {
   border: none;
   min-width: 200px;
   z-index: 1;
+  transition: box-shadow 0.2s ease-in-out;
 }
 .btn::before {
   content: "";
@@ -291,8 +292,11 @@ footer .foot-title svg {
   transition: opacity 0.2s ease-in-out;
   z-index: -1;
 }
+.btn:hover {
+  box-shadow: rgba(50, 50, 93, 0.4) 0px 6px 12px -2px, rgba(0, 0, 0, 0.5) 0px 3px 7px -3px;
+}
 .btn:hover::before {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 .btn--icon {
   font-family: "Material Icons", sans-serif;
@@ -353,8 +357,63 @@ footer .foot-title svg {
   width: 24px;
   background-color: transparent;
   appearance: none;
+  z-index: 1;
+}
+.favorite [type=checkbox]:hover + .favorite__bg {
+  animation: heart 200ms ease-in-out;
+}
+.favorite [type=checkbox]:hover + .favorite__bg > .favorite__bg__icon {
+  transform: scale(1);
+}
+.favorite [type=checkbox]:hover + .favorite__bg > .favorite__bg__border {
+  opacity: 0;
+}
+.favorite [type=checkbox]:checked {
+  animation: heart 200ms ease-in-out;
+}
+.favorite [type=checkbox]:checked + .favorite__bg > .favorite__bg__icon {
+  transform: scale(1);
+}
+.favorite [type=checkbox]:checked + .favorite__bg > .favorite__bg__border {
+  opacity: 0;
+}
+.favorite__bg {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  pointer-events: none;
+}
+.favorite__bg__border, .favorite__bg__icon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.favorite__bg__icon {
+  z-index: 1;
+  transform: scale(0);
+}
+.favorite__bg__icon .gradient-start {
+  stop-color: #FF79DA;
+}
+.favorite__bg__icon .gradient-end {
+  stop-color: #9356DC;
 }
 
+@keyframes heart {
+  0% {
+    transform: scale 1;
+  }
+  45% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .list-cards {
   display: flex;
   flex-direction: row;
@@ -389,8 +448,8 @@ footer .foot-title svg {
 }
 .list-cards .card__cover img {
   display: block;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
 }
 .list-cards .card__content {
@@ -440,9 +499,22 @@ footer .foot-title svg {
   flex-wrap: nowrap;
   justify-content: space-between;
   overflow: hidden;
+  cursor: pointer;
 }
 .dishes-list .dish__desc {
-  padding: 10px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 5px;
+  min-width: 0px;
+}
+.dishes-list .dish__desc h3, .dishes-list .dish__desc p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.dishes-list .dish__desc p {
+  margin: 0;
 }
 .dishes-list .dish__select {
   display: flex;
@@ -453,14 +525,16 @@ footer .foot-title svg {
 .dishes-list .dish__select__checkbox {
   position: relative;
   height: 100%;
-  width: 65px;
+  width: 0px;
+  transition: width 0.2s ease-in-out;
 }
 .dishes-list .dish__select p {
   font-weight: 600;
-  margin-bottom: 10px;
-  margin-right: 20px;
+  padding-bottom: 10px;
+  padding-right: 20px;
 }
-.dishes-list .dish__select [type=checkbox] {
+.dishes-list .dish__select [type=radio] {
+  position: relative;
   margin: 0;
   display: block;
   cursor: pointer;
@@ -468,7 +542,7 @@ footer .foot-title svg {
   width: 100%;
   appearance: none;
 }
-.dishes-list .dish__select [type=checkbox]::before {
+.dishes-list .dish__select [type=radio]::before {
   content: "";
   position: absolute;
   top: 0;
@@ -476,10 +550,33 @@ footer .foot-title svg {
   width: 100%;
   height: 100%;
   border: none !important;
+  border-radius: 0 20px 20px 0;
   background-color: #99e2d0;
 }
-.dishes-list .dish__select [type=checkbox]:checked::before {
-  background-color: black;
+.dishes-list .dish__select [type=radio]:checked::after, .dishes-list .dish__select [type=radio]:not(:checked)::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  font-family: "Material Icons";
+  content: "\e86c";
+  color: white;
+  transform: rotate(0deg);
+}
+.dishes-list .dish__select [type=radio]:not(:checked)::after {
+  content: "\e836";
+}
+.dishes-list .dish:hover .dish__select__checkbox {
+  width: 65px;
+}
+.dishes-list .dish:hover .dish__select__checkbox input[type=radio]::after {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(360deg);
 }
 
 /*# sourceMappingURL=style.css.map */

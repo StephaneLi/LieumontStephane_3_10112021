@@ -19,9 +19,24 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     overflow: hidden;
+    cursor: pointer;
 
     &__desc {
-      padding: 10px 15px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left:15px;
+      padding-right:5px;
+      min-width: 0px;
+      
+      h3, p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      p {
+        margin:0;
+      }
     }
 
     &__select {
@@ -33,16 +48,18 @@
       &__checkbox {
         position: relative;
         height: 100%;
-        width: 65px;
+        width: 0px;
+        transition: width .2s ease-in-out;
       }
 
       p {
         font-weight: 600;
-        margin-bottom: 10px;
-        margin-right: 20px;
+        padding-bottom: 10px;
+        padding-right: 20px;
       }
 
-      [type="checkbox"] {
+      [type="radio"] {
+        position: relative;
         margin:0;
         display: block;
         cursor: pointer;
@@ -58,12 +75,37 @@
           width: 100%;
           height: 100%;
           border: none!important;
+          border-radius: 0 $border-radius $border-radius 0;
           background-color: $background-success;
         }
 
-        &:checked::before {
-          background-color: black;
+        &:checked::after, &:not(:checked)::after {
+          position: absolute;
+          top:0;
+          left:0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          font-size: 1.6rem;
+          font-family: "Material Icons";
+          content: "\e86c";
+          color:white;
+          transform: rotate(0deg);               
         }
+        &:not(:checked)::after {
+          content: "\e836";
+        }
+      }
+    }
+
+    &:hover .dish__select__checkbox {
+      width: 65px;
+
+      & input[type="radio"]::after{
+        transition: transform .3s ease-in-out; 
+        transform: rotate(360deg);
       }
     }
   }
