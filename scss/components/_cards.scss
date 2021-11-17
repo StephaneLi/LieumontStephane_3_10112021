@@ -3,8 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: calc-space(2);
-  column-gap: calc-space(2); 
+  gap: calc-space(4);
   margin-bottom: calc-space(2); 
 
   .card {
@@ -13,6 +12,7 @@
     flex: 1 1 40%;
     min-width: $card-min-width;
     max-width: $card-max-width;
+    max-height: $card-max-height;
     box-shadow: $shadow-items;
     border-radius: $border-radius;
     height: $card-max-height;

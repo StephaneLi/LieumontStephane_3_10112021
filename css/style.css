@@ -244,8 +244,7 @@ footer .foot-title svg {
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  column-gap: 20px;
-  row-gap: 20px;
+  gap: 40px;
 }
 .features-list a {
   display: flex;
@@ -469,8 +468,7 @@ footer .foot-title svg {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 20px;
-  column-gap: 20px;
+  gap: 40px;
   margin-bottom: 20px;
 }
 .list-cards .card {
@@ -479,6 +477,7 @@ footer .foot-title svg {
   flex: 1 1 40%;
   min-width: 270px;
   max-width: 500px;
+  max-height: 250px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
   border-radius: 20px;
   height: 250px;
@@ -655,10 +654,6 @@ footer .foot-title svg {
 }
 /* responsive design */
 @media (max-width: 992px) {
-  h2 {
-    text-align: left;
-  }
-
   .features-list {
     flex-direction: column;
     justify-content: center;
@@ -683,14 +678,30 @@ footer .foot-title svg {
   }
 }
 @media (max-width: 768px) {
+  h2 {
+    text-align: left;
+  }
+
   .dishes-list {
     flex-direction: column;
   }
-
-  .dish {
+  .dishes-list .dish {
     flex: 1 1 100% !important;
     max-width: 100% !important;
     width: 100% !important;
+  }
+
+  .list-cards {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .list-cards .card {
+    width: 100%;
+  }
+
+  .features-list, .list-cards {
+    gap: 20px;
   }
 
   .container {

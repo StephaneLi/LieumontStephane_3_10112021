@@ -1,8 +1,5 @@
 // Medium devices (tablets, less than 992px)
 @media (max-width: $screen-md) {
-  h2 {
-    text-align: left;
-  }
   .features-list {
     flex-direction: column;
     justify-content: center;
@@ -30,13 +27,33 @@
 
 // Large devices (desktops, less than 1200px)
 @media (max-width: $screen-sm) {
+  h2 {
+    text-align: left;
+  }
+
   .dishes-list {
     flex-direction: column;
+
+    .dish {
+      flex:1 1 100%!important;
+      max-width: 100%!important;;
+      width: 100%!important;
+    }
   }
-  .dish {
-    flex:1 1 100%!important;
-    max-width: 100%!important;;
-    width: 100%!important;
+
+
+  .list-cards {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+      width: 100%;
+    }
+  }
+
+  .features-list, .list-cards {
+    gap: calc-space(2);
   }
 
   .container {
