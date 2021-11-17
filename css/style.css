@@ -1,9 +1,10 @@
-/* import variables & mixins SCSS */
+/* variables & mixins SCSS */
 /* COLORS THEME */
 /* COLORS BACKGROUND */
 /* SPACES REFERENCES */
 /* CSS REFERENCES */
-/* import global SCSS */
+/* CSS COMPONENT */
+/* global SCSS */
 * {
   box-sizing: border-box;
 }
@@ -44,19 +45,35 @@ h1.home-title {
   font-family: inherit;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .container {
   position: relative;
   display: block;
   width: 100%;
   margin: 0 auto;
-  padding: 0px 20px;
-  max-width: 1200px;
+  padding: 0px 50px;
+  max-width: 1024px;
 }
-.container--flex {
+.container--flexrow {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.container--flexcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container--xl {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hide {
@@ -73,57 +90,15 @@ h1.home-title {
   background-color: #353535;
 }
 
-/* import Layout SCSS */
-header {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
-  z-index: 2;
-}
-header .btn {
-  position: absolute;
-  left: 0;
-  margin: 0px 10px;
-  z-index: 1;
-}
-header #main-logo {
-  padding: 20px 0;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  flex: 1 1 auto;
-  overflow: hidden;
-}
-
-footer {
-  padding: 20px 0;
-  font-size: 0.9rem;
-  color: white;
-}
-footer a {
-  color: inherit;
-}
-footer ul li {
-  padding-bottom: 7px;
-}
-footer i {
-  font-size: 14px !important;
-  width: 25px;
-}
-footer .foot-title {
-  margin-bottom: 10px;
-}
-footer .foot-title svg {
-  fill: #ffffff !important;
-}
-
-/* import Pages SCSS */
-#section-cta, #section-features, #section-restaurants {
-  padding: 50px 0;
+/* Pages SCSS */
+#section-cta,
+#section-features,
+#section-restaurants {
+  padding: 30px 0;
 }
 
 #section-local {
+  min-width: 100%;
   padding: 20px 0;
   font-weight: 700;
   color: #353535;
@@ -143,6 +118,7 @@ footer .foot-title svg {
 }
 
 #section-cta {
+  min-width: 100%;
   text-align: center;
 }
 #section-cta h2 {
@@ -151,10 +127,6 @@ footer .foot-title svg {
 #section-cta p {
   color: grey;
   margin-bottom: 30px;
-}
-
-#section-features {
-  padding: 50px 0;
 }
 
 #restaurant {
@@ -171,16 +143,14 @@ footer .foot-title svg {
   min-width: 100%;
   object-fit: cover;
 }
+#restaurant h2 {
+  text-align: left;
+}
 
 #form-restaurant {
   border-radius: 20px 20px 0 0;
   background: #f6f6f6;
   font-size: 0.95rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  flex: 1 1 auto;
   padding: 40px 30px;
   padding-bottom: 80px;
 }
@@ -192,6 +162,10 @@ footer .foot-title svg {
   flex-wrap: nowrap;
   align-content: center;
   justify-content: space-between;
+  width: 100%;
+}
+#form-restaurant section {
+  width: 100%;
 }
 #form-restaurant h2 {
   font-size: 1rem;
@@ -207,14 +181,69 @@ footer .foot-title svg {
   border-bottom: 3px solid #99e2d0;
 }
 
-/* import Components SCSS */
+/* Layout SCSS */
+header {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+  z-index: 2;
+}
+header .btn {
+  position: absolute;
+  left: 0;
+  margin: 0px 10px;
+  z-index: 1;
+}
+header #main-logo {
+  padding: 20px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+footer {
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: white;
+}
+footer a {
+  color: inherit;
+}
+footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: end;
+  gap: 30px;
+}
+footer ul li {
+  padding-bottom: 7px;
+}
+footer i {
+  font-size: 14px !important;
+  width: 25px;
+}
+footer .foot-title {
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+footer .foot-title svg {
+  fill: #ffffff !important;
+}
+
+/* Components SCSS */
 .features-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px 0;
+  padding-top: 0;
+  padding-bottom: 20px;
   padding-left: 10px;
+  padding-right: 10px;
   column-gap: 20px;
   row-gap: 20px;
 }
@@ -232,22 +261,43 @@ footer .foot-title svg {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  flex: 1 1 auto;
   column-gap: 20px;
-  min-width: 170px;
+  width: 100%;
+  max-width: 550px;
   padding: 20px 40px;
   font-size: 0.85rem;
   line-height: 25px;
   font-weight: 600;
+  white-space: nowrap;
   background-color: #f6f6f6;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
   counter-increment: li;
+  transition: bacground 1s ease-in-out;
+  cursor: default;
+}
+.features-list__item:hover > i {
+  color: #9356DC !important;
+}
+.features-list__item:hover::before {
+  opacity: 0.1;
 }
 .features-list__item i {
   color: grey;
 }
 .features-list__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  content: "";
+  background-color: #9356DC;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.features-list__item::after {
   position: absolute;
   left: 0;
   height: 25px;
@@ -431,25 +481,32 @@ footer .foot-title svg {
   max-width: 500px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
   border-radius: 20px;
-  max-height: 300px;
+  height: 250px;
   justify-content: flex-start;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out;
 }
 .list-cards .card a {
   color: inherit !important;
 }
+.list-cards .card:hover {
+  background-color: #f2eafb;
+  transform: scale(1.02);
+  color: #6023a9;
+}
 .list-cards .card__cover {
   overflow: hidden;
   width: 100%;
+}
+.list-cards .card__cover a {
+  display: block;
   height: 100%;
 }
 .list-cards .card__cover img {
-  display: block;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .list-cards .card__content {
@@ -464,6 +521,10 @@ footer .foot-title svg {
 .list-cards .card__content h3, .list-cards .card__content p {
   margin-top: 0;
   margin-bottom: 5px;
+}
+.list-cards .card__infos {
+  display: block;
+  flex: 1 1 auto;
 }
 .list-cards .card--new::after {
   position: absolute;
@@ -481,8 +542,11 @@ footer .foot-title svg {
 
 .dishes-list {
   display: flex;
-  flex-direction: column;
-  row-gap: 15px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 15px;
   margin-bottom: 40px;
 }
 .dishes-list h3, .dishes-list p {
@@ -490,6 +554,9 @@ footer .foot-title svg {
   margin-bottom: 5px;
 }
 .dishes-list .dish {
+  flex: 1 1 30%;
+  min-width: 300px;
+  max-width: 30%;
   padding: 0;
   background: white;
   border-radius: 20px;
@@ -539,7 +606,10 @@ footer .foot-title svg {
   display: block;
   cursor: pointer;
   height: 100%;
-  width: 100%;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   appearance: none;
 }
 .dishes-list .dish__select [type=radio]::before {
@@ -554,15 +624,11 @@ footer .foot-title svg {
   background-color: #99e2d0;
 }
 .dishes-list .dish__select [type=radio]:checked::after, .dishes-list .dish__select [type=radio]:not(:checked)::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  font-size: 1.6rem;
+  height: 24px;
+  width: 65px;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
   font-family: "Material Icons";
   content: "\e86c";
   color: white;
@@ -575,8 +641,62 @@ footer .foot-title svg {
   width: 65px;
 }
 .dishes-list .dish:hover .dish__select__checkbox input[type=radio]::after {
-  transition: transform 0.3s ease-in-out;
-  transform: rotate(360deg);
+  animation: rotate 500ms backwards ease-in-out 100ms;
+  transform: rotate(0deg);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* responsive design */
+@media (max-width: 992px) {
+  h2 {
+    text-align: left;
+  }
+
+  .features-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .features-list_item {
+    width: auto;
+  }
+
+  .dishes-list {
+    justify-content: flex-start;
+  }
+
+  .dish {
+    flex: 1 1 50% !important;
+    max-width: 48% !important;
+  }
+
+  footer ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+@media (max-width: 768px) {
+  .dishes-list {
+    flex-direction: column;
+  }
+
+  .dish {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,10 @@
 .dishes-list {
   display: flex;
-  flex-direction: column;
-  row-gap: calc-space(1.5);
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: calc-space(1.5);
   margin-bottom: calc-space(4);
 
   h3, p {
@@ -9,7 +12,10 @@
     margin-bottom: 5px;
   }
 
-  .dish {
+  .dish {    
+    flex:1 1 30%;
+    min-width: 300px;
+    max-width: 30%;
     padding: 0;
     background: white;
     border-radius: $border-radius;
@@ -64,7 +70,10 @@
         display: block;
         cursor: pointer;
         height: 100%;
-        width: 100%;
+        width: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         appearance: none;
 
         &::before {
@@ -80,15 +89,11 @@
         }
 
         &:checked::after, &:not(:checked)::after {
-          position: absolute;
-          top:0;
-          left:0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          width: 100%;
-          font-size: 1.6rem;
+          height: 24px;
+          width: 65px;
+          font-size: 24px;
+          line-height: 24px;
+          text-align: center;
           font-family: "Material Icons";
           content: "\e86c";
           color:white;
@@ -104,9 +109,18 @@
       width: 65px;
 
       & input[type="radio"]::after{
-        transition: transform .3s ease-in-out; 
-        transform: rotate(360deg);
+        animation: rotate 500ms backwards ease-in-out 100ms;
+        transform: rotate(0deg);
       }
     }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -1,22 +1,25 @@
-/* import variables & mixins SCSS */
+/* variables & mixins SCSS */
 @import './abstracts/variables';
 @import './abstracts/mixins';
 @import './abstracts/functions';
 
-/* import global SCSS */
+/* global SCSS */
 @import './core/base';
 
-/* import Layout SCSS */
+/* Pages SCSS */
+@import './pages/home';
+@import './pages/restaurant';
+
+/* Layout SCSS */
 @import './layout/header';
 @import './layout/main';
 @import './layout/footer';
 
-/* import Pages SCSS */
-@import './pages/home';
-@import './pages/restaurant';
-
-/* import Components SCSS */
+/* Components SCSS */
 @import './components/features';
 @import './components/buttons';
 @import './components/cards';
 @import './components/dishes';
+
+/* responsive design */
+@import './layout/responsive';

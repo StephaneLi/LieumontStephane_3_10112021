@@ -1,0 +1,46 @@
+// Medium devices (tablets, less than 992px)
+@media (max-width: $screen-md) {
+  h2 {
+    text-align: left;
+  }
+  .features-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_item {
+      width: auto;
+    }
+  }
+
+  .dishes-list {
+    justify-content: flex-start;
+  }
+
+  .dish {
+    flex:1 1 50%!important;
+    max-width: 48%!important;
+  }
+
+  footer ul {
+    flex-direction:column;
+    gap:5px;
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: $screen-sm) {
+  .dishes-list {
+    flex-direction: column;
+  }
+  .dish {
+    flex:1 1 100%!important;
+    max-width: 100%!important;;
+    width: 100%!important;
+  }
+
+  .container {
+    padding-left: calc-space(2);
+    padding-right: calc-space(2);
+  }
+}

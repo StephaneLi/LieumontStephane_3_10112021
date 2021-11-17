@@ -17,7 +17,7 @@
 
 <body>
   <header>
-    <div class="container container--flex">
+    <div class="container container--flexrow">
       <a class="btn btn--icon hide" href="/">Retour<i class="material-icons-outlined">arrow_back</i></a>
       <a id="main-logo" href="/"><img width="160" srcset="./images/logo/ohmyfood.png, ./images/logo/ohmyfood@2x.svg 2x" src="./images/logo/ohmyfood@2x.svg" alt="logo ohmyfood"></a>
     </div>
@@ -32,16 +32,16 @@
       <div class="container">
         <h1 class="home-title">Réservez le menu qui vous convient</h1>
         <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-        <a href="#" class="btn">Explorer nos restaurants</a>
+        <a href="#section-restaurants" class="btn">Explorer nos restaurants</a>
       </div>
     </section>
     <section id="section-features">
       <div class="container">
         <h2>Fonctionnement</h2>
         <ol class="features-list">
-          <li class="features-list__item"><a href="#"><i class="material-icons">phone_iphone</i>Choisissez un restaurant</a></li>
-          <li class="features-list__item"><a href="#"><i class="material-icons">format_list_bulleted</i>Composez votre menu</a></li>
-          <li class="features-list__item"><a href="#"><i class="material-icons">storefront</i>Dégustez au restaurant</a></li>
+          <li class="features-list__item"><i class="material-icons">phone_iphone</i>Choisissez un restaurant</li>
+          <li class="features-list__item"><i class="material-icons">format_list_bulleted</i>Composez votre menu</li>
+          <li class="features-list__item"><i class="material-icons">storefront</i>Dégustez au restaurant</li>
         </ol>
       </div>
     </section>
@@ -56,11 +56,9 @@
               </a>
             </div>
             <div class="card__content">
-              <a href="#">
-                <div class="card__infos">
-                  <h3>La palette du goût</h3>
-                  <p>Ménilmontant</p>
-                </div>
+              <a class="card__infos" href="#">
+                <h3>La palette du goût</h3>
+                <p>Ménilmontant</p>
               </a>
               <div class="favorite">
                 <input type="checkbox" name="favorite" value="false">
@@ -87,12 +85,10 @@
               </a>
             </div>
             <div class="card__content">
-              <div class="card__infos">
-                <a href="#">
-                  <h3>La note enchantée</h3>
-                  <p>Charonne</p>
-                </a>
-              </div>
+              <a class="card__infos" href="#">
+                <h3>La note enchantée</h3>
+                <p>Charonne</p>
+              </a>
               <div class="favorite">
                 <input type="checkbox" name="favorite" value="false">
                 <div class="favorite__bg">
@@ -118,11 +114,9 @@
               </a>
             </div>
             <div class="card__content">
-              <a href="a_la_française.html">
-                <div class="card__infos">
-                  <h3>À la française</h3>
-                  <p>Cité Rouge</p>
-                </div>
+              <a class="card__infos" href="a_la_française.html">
+                <h3>À la française</h3>
+                <p>Cité Rouge</p>
               </a>
               <div class="favorite">
                 <input type="checkbox" name="favorite" value="false">
@@ -149,11 +143,9 @@
               </a>
             </div>
             <div class="card__content">
-              <a href="#">
-                <div class="card__infos">
-                  <h3>Le délice des sens</h3>
-                  <p>Folie-Méricourt</p>
-                </div>
+              <a class="card__infos" href="#">
+                <h3>Le délice des sens</h3>
+                <p>Folie-Méricourt</p>
               </a>
               <div class="favorite">
                 <input type="checkbox" name="favorite" value="false">

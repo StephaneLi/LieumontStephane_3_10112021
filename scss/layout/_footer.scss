@@ -7,6 +7,14 @@ footer {
     color: inherit;
   }
 
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: end;
+    gap:calc-space(3)
+  }
+
   ul li {
     padding-bottom:7px;
   }
@@ -17,6 +25,7 @@ footer {
   }
 
   .foot-title {
+    flex-grow: 1;
     margin-bottom: calc-space(1);
     svg{
       fill: #ffffff!important;
