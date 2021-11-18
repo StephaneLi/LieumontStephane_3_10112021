@@ -75,11 +75,15 @@ npm install -g sass
 sass --watch scss/style.scss css/style.css
 ```
 
+## Github Page
+
+[Ohmyfood - Preview](https://stephaneli.github.io/LieumontStephane_3_10112021/)
+
 ## Contribution
 Chaque nouvelles fonctionnalités doit être dans une nouvelle branche.  
 La branche doit être valide pour être implémentée.
 
-## Autheur
+## Auteur
 Stéphane LIEUMONT  
 [Projets OpenClassrooms](https://oc.sli-3d.fr/)  
 [Portfolio 3D](https://portfolio.sli-3d.fr/)
