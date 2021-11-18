@@ -1,9 +1,7 @@
-// Medium devices (tablets, less than 992px)
+// Breakpoint for tablets
 @media (max-width: $screen-md) {
   .features-list {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column);
 
     &_item {
       width: auto;
@@ -25,7 +23,7 @@
   }
 }
 
-// Large devices (desktops, less than 1200px)
+// Breakpoint for phones
 @media (max-width: $screen-sm) {
   h2 {
     text-align: left;
@@ -43,9 +41,7 @@
 
 
   .list-cards {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column);
 
     .card {
       width: 100%;
@@ -59,5 +55,11 @@
   .container {
     padding-left: calc-space(2);
     padding-right: calc-space(2);
+  }
+
+  .container {  
+    &--xl {
+      padding: calc-space(3) calc-space(2);
+    }
   }
 }

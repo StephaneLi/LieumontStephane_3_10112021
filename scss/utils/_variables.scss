@@ -22,6 +22,7 @@ $screen-sm:768px;
 
 /* CSS REFERENCES */
 $border-radius: 20px;
+$shadow-box: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 $shadow-items: rgba(0, 0, 0, 0.13) 0px 3px 8px;
 $shadow-btn: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 $shadow-btn-hover: rgba(50, 50, 93, 0.4) 0px 6px 12px -2px, rgba(0, 0, 0, 0.5) 0px 3px 7px -3px;
@@ -34,6 +35,6 @@ $card-max-width: 500px;
 /* CSS ANIMATIONS */
 $anim-loader-dur: 1000ms;
 $anim-rotate-spinner: 700ms;
-$anim-fadein-dur: $anim-loader-dur/2;
-$anim-fadein-delay: $anim-fadein-dur / 6;
+$anim-fadein-dur: calc($anim-loader-dur/2);
+$anim-fadein-delay: calc($anim-fadein-dur/6);
 $anim-dish-show-dur: 500ms;

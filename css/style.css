@@ -14,13 +14,14 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-size: 1rem;
-  width: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: stretch;
   flex-wrap: nowrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
 }
 
@@ -64,17 +65,20 @@ h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
 }
 .container--flexcol {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
 }
 .container--xl {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 40px 60px;
 }
 
 .hide {
@@ -105,14 +109,14 @@ h2 {
   color: #353535;
 }
 #section-local h4 {
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  column-gap: 15px;
   justify-content: center;
   align-items: flex-end;
+  flex-wrap: nowrap;
+  padding: 0;
+  margin: 0;
+  column-gap: 15px;
 }
 #section-local h4 i {
   font-size: 20px;
@@ -135,13 +139,18 @@ h2 {
   padding-top: 250px;
 }
 #restaurant__cover {
-  z-index: -1;
-}
-#restaurant__cover img {
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 100%;
+  z-index: 1;
+  min-height: 270px;
+  max-height: 350px;
+  height: 30vw;
+  width: 100%;
+}
+#restaurant__cover img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 #restaurant h2 {
@@ -151,18 +160,20 @@ h2 {
 #form-restaurant {
   border-radius: 20px 20px 0 0;
   background: #f6f6f6;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   font-size: 0.95rem;
-  padding: 40px 30px;
   padding-bottom: 80px;
+  z-index: 2;
 }
 #form-restaurant__submit {
   margin: 0 auto;
 }
 #form-restaurant__title {
   display: flex;
-  flex-wrap: nowrap;
-  align-content: center;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: start;
+  flex-wrap: nowrap;
   width: 100%;
 }
 #form-restaurant section {
@@ -189,9 +200,10 @@ header {
 }
 header .btn {
   position: absolute;
+  top: inherit;
   left: 0;
-  margin: 0px 10px;
   z-index: 1;
+  margin: 0px 10px;
 }
 header #main-logo {
   padding: 20px 0;
@@ -201,6 +213,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: stretch;
   flex-wrap: nowrap;
   overflow: hidden;
 }
@@ -219,8 +232,9 @@ footer a:hover {
 footer ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: end;
+  align-items: stretch;
+  flex-wrap: nowrap;
   gap: 30px;
 }
 footer ul li {
@@ -241,29 +255,23 @@ footer .foot-title svg {
 /* Components SCSS */
 .features-list {
   display: flex;
-  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
   padding-top: 0;
   padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
   gap: 40px;
 }
-.features-list a {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-between;
-  column-gap: 20px;
-  color: inherit;
-}
 .features-list__item {
-  position: relative;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  position: relative;
   column-gap: 20px;
   width: 100%;
   max-width: 550px;
@@ -276,7 +284,7 @@ footer .foot-title svg {
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
   counter-increment: li;
-  transition: bacground 1s ease-in-out;
+  transition: all 1s ease-in-out;
   cursor: default;
 }
 .features-list__item:hover > i {
@@ -292,8 +300,9 @@ footer .foot-title svg {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 20px;
+  z-index: 1;
   content: "";
+  border-radius: 20px;
   background-color: #9356DC;
   height: 100%;
   width: 100%;
@@ -302,7 +311,9 @@ footer .foot-title svg {
 }
 .features-list__item::after {
   position: absolute;
+  top: inherit;
   left: 0;
+  z-index: 1;
   height: 25px;
   width: 25px;
   line-height: 25px;
@@ -317,6 +328,7 @@ footer .foot-title svg {
 
 .btn {
   position: relative;
+  z-index: 1;
   display: inline-block;
   border-radius: 30px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -330,7 +342,6 @@ footer .foot-title svg {
   padding: 15px 20px;
   border: none;
   min-width: 200px;
-  z-index: 1;
   transition: box-shadow 0.2s ease-in-out;
 }
 .btn::before {
@@ -338,12 +349,12 @@ footer .foot-title svg {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
   height: 100%;
   width: 100%;
   background: white;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
-  z-index: -1;
 }
 .btn:hover {
   box-shadow: rgba(50, 50, 93, 0.4) 0px 6px 12px -2px, rgba(0, 0, 0, 0.5) 0px 3px 7px -3px;
@@ -370,28 +381,33 @@ footer .foot-title svg {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   text-align: center;
   width: 45px;
   height: 45px;
   visibility: visible;
   font-style: inherit;
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-out;
+  transform: translateX(5px);
 }
 .btn--icon > i::before {
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
   border-radius: 50%;
   display: block;
   content: "";
   background: #eaeaea;
   width: 100%;
   height: 100%;
-  z-index: -1;
   transform: scale(0);
   opacity: 0;
   transition: all 0.1s ease-in-out;
 }
 .btn--icon > i:hover {
   color: #4d4d4d;
+  transform: translateX(0px);
 }
 .btn--icon > i:hover::before {
   transform: scale(1);
@@ -403,6 +419,9 @@ footer .foot-title svg {
 }
 .favorite [type=checkbox] {
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   margin: 0;
   display: block;
   cursor: pointer;
@@ -410,7 +429,6 @@ footer .foot-title svg {
   width: 24px;
   background-color: transparent;
   appearance: none;
-  z-index: 1;
 }
 .favorite [type=checkbox]:hover + .favorite__bg {
   animation: heart 200ms ease-in-out;
@@ -438,15 +456,14 @@ footer .foot-title svg {
 }
 .favorite__bg__border, .favorite__bg__icon {
   position: absolute;
-  height: 100%;
-  width: 100%;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .favorite__bg__icon {
-  z-index: 1;
   transform: scale(0);
 }
 .favorite__bg__icon .gradient-start {
@@ -458,7 +475,7 @@ footer .foot-title svg {
 
 @keyframes heart {
   0% {
-    transform: scale 1;
+    transform: scale(1);
   }
   45% {
     transform: scale(1.5);
@@ -471,24 +488,27 @@ footer .foot-title svg {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   gap: 40px;
   margin-bottom: 20px;
 }
 .list-cards .card {
   position: relative;
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
   flex: 1 1 40%;
+  width: 40%;
   min-width: 270px;
   max-width: 500px;
   max-height: 250px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
   border-radius: 20px;
   height: 250px;
-  justify-content: flex-start;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out;
 }
 .list-cards .card a {
@@ -517,9 +537,9 @@ footer .foot-title svg {
   padding: 10px 15px;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: nowrap;
 }
 .list-cards .card__content h3, .list-cards .card__content p {
   margin-top: 0;
@@ -545,10 +565,11 @@ footer .foot-title svg {
 
 .dishes-list {
   display: flex;
-  width: 100%;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
+  width: 100%;
   gap: 15px;
   margin-bottom: 40px;
 }
@@ -557,17 +578,18 @@ footer .foot-title svg {
   margin-bottom: 5px;
 }
 .dishes-list .dish {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
   flex: 1 1 30%;
-  min-width: 300px;
-  max-width: 30%;
+  min-width: 270px;
+  max-width: 33.3%;
   padding: 0;
   background: white;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.13) 0px 3px 8px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
   overflow: hidden;
   cursor: pointer;
   animation: dish-show 500ms ease-out both;
@@ -599,6 +621,39 @@ footer .foot-title svg {
 .dishes-list .dish--9 {
   animation-delay: 1500ms;
 }
+.dishes-list .dish--10 {
+  animation-delay: 1666.6666666667ms;
+}
+.dishes-list .dish--11 {
+  animation-delay: 1833.3333333333ms;
+}
+.dishes-list .dish--12 {
+  animation-delay: 2000ms;
+}
+.dishes-list .dish--13 {
+  animation-delay: 2166.6666666667ms;
+}
+.dishes-list .dish--14 {
+  animation-delay: 2333.3333333333ms;
+}
+.dishes-list .dish--15 {
+  animation-delay: 2500ms;
+}
+.dishes-list .dish--16 {
+  animation-delay: 2666.6666666667ms;
+}
+.dishes-list .dish--17 {
+  animation-delay: 2833.3333333333ms;
+}
+.dishes-list .dish--18 {
+  animation-delay: 3000ms;
+}
+.dishes-list .dish--19 {
+  animation-delay: 3166.6666666667ms;
+}
+.dishes-list .dish--20 {
+  animation-delay: 3333.3333333333ms;
+}
 .dishes-list .dish__desc {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -617,8 +672,9 @@ footer .foot-title svg {
 .dishes-list .dish__select {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  justify-content: center;
   align-items: flex-end;
+  flex-wrap: nowrap;
 }
 .dishes-list .dish__select__checkbox {
   position: relative;
@@ -632,22 +688,24 @@ footer .foot-title svg {
   padding-right: 20px;
 }
 .dishes-list .dish__select [type=radio] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   position: relative;
   margin: 0;
-  display: block;
   cursor: pointer;
   height: 100%;
   width: 65px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   appearance: none;
 }
 .dishes-list .dish__select [type=radio]::before {
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
+  content: "";
   width: 100%;
   height: 100%;
   border: none !important;
@@ -695,10 +753,12 @@ footer .foot-title svg {
   }
 }
 .loader {
-  position: fixed;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -766,9 +826,11 @@ footer .foot-title svg {
 /* responsive design */
 @media (max-width: 992px) {
   .features-list {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
   }
   .features-list_item {
     width: auto;
@@ -803,9 +865,11 @@ footer .foot-title svg {
   }
 
   .list-cards {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
   }
   .list-cards .card {
     width: 100%;
@@ -818,6 +882,10 @@ footer .foot-title svg {
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .container--xl {
+    padding: 30px 20px;
   }
 }
 

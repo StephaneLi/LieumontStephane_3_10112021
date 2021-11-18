@@ -1,29 +1,15 @@
+// features step on home page application
 .features-list {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-between;
+  @include flex(row, space-between, stretch, nowrap);
   padding-top:0;
   padding-bottom: calc-space(2);
   padding-left: calc-space(1);
   padding-right: calc-space(1);
-  gap: calc-space(4);
-
-  a{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: calc-space(2);
-    color:inherit;
-  }
+  gap: calc-space(4);  
 
   &__item {
+    @include flex(row, flex-start, stretch, nowrap);
     position: relative;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
     column-gap: calc-space(2);
     width: 100%;
     max-width: 550px;  
@@ -36,7 +22,7 @@
     border-radius: $border-radius;
     box-shadow: $shadow-items;
     counter-increment: li;
-    transition: bacground 1s ease-in-out;
+    transition: all 1s ease-in-out;
     cursor: default;
 
     &:hover {
@@ -54,11 +40,9 @@
     }
 
     &::before {
-      position: absolute;
-      top:0;
-      left:0;
-      border-radius: $border-radius;
+      @include absolute();
       content:"";
+      border-radius: $border-radius;      
       background-color: $primary;
       height: 100%;
       width: 100%;
@@ -67,8 +51,7 @@
     }
 
     &::after {
-      position: absolute;
-      left:0;
+      @include absolute(inherit, 0);
       height:25px;
       width: 25px;
       line-height: 25px;

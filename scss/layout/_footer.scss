@@ -1,3 +1,4 @@
+// Layout Footer CSS
 footer {
   padding: calc-space(2) 0;
   font-size: 0.9rem;
@@ -12,10 +13,7 @@ footer {
   }
 
   ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: end;
+    @include flex(row, end, stretch, nowrap);
     gap:calc-space(3)
   }
 

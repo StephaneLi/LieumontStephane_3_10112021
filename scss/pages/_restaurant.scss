@@ -1,13 +1,16 @@
+// section restaurant menu
 #restaurant {
   position: relative;
   padding-top: 250px;
   &__cover {
-    z-index: -1;
+    @include absolute();
+    min-height:270px;
+    max-height: 350px;
+    height: 30vw;
+    width: 100%;
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
+      width: 100%;
+      height:100%;
       object-fit: cover;
     }
   }
@@ -16,20 +19,19 @@
   }
 }
 
+// section form select dishes
 #form-restaurant {
   border-radius: $border-radius $border-radius 0 0;
   background: $background-greylight;
+  box-shadow: $shadow-box;
   font-size: 0.95rem;
-  padding: calc-space(4) calc-space(3);
   padding-bottom: calc-space(8);
+  z-index: 2;
   &__submit {
     margin: 0 auto;
   }
   &__title {
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
+    @include flex(row, space-between, start, nowrap);
     width: 100%;
   }
   section {

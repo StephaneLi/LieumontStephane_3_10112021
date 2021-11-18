@@ -4,26 +4,24 @@
   padding: calc-space(3) 0;
 }
 
+// Section Local position
 #section-local {
   min-width: 100%;
   padding: calc-space(2) 0;
   font-weight: 700;
   color: $greydark;
   h4 {
+    @include flex(row, center, flex-end, nowrap);
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    column-gap: 15px;
-    justify-content: center;
-    align-items: flex-end;
+    column-gap: 15px;    
     i {
       font-size: 20px;
     }
   }
 }
 
+// Section call to action
 #section-cta {
   min-width: 100%;
   text-align: center;
