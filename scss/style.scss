@@ -1,10 +1,10 @@
 /* variables & mixins SCSS */
-@import './abstracts/variables';
-@import './abstracts/mixins';
-@import './abstracts/functions';
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/functions';
 
 /* global SCSS */
-@import './core/base';
+@import './base/base';
 
 /* Pages SCSS */
 @import './pages/home';

@@ -58,7 +58,8 @@
       height: 45px;
       visibility: visible;
       font-style: inherit;
-      transition: transform .1s ease-in-out;
+      transition: transform .1s ease-out;
+      transform: translateX(5px);
 
       &::before {
         position: absolute;
@@ -76,6 +77,7 @@
 
       &:hover {
         color: lighten(black, 30%);
+        transform: translateX(0px);
         &::before {
           transform: scale(1);
           opacity: .3;

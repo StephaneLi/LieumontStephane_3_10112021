@@ -1,4 +1,3 @@
-// Medium devices (tablets, less than 992px)
 @media (max-width: $screen-md) {
   .features-list {
     flex-direction: column;
@@ -25,7 +24,6 @@
   }
 }
 
-// Large devices (desktops, less than 1200px)
 @media (max-width: $screen-sm) {
   h2 {
     text-align: left;
@@ -59,5 +57,11 @@
   .container {
     padding-left: calc-space(2);
     padding-right: calc-space(2);
+  }
+
+  .container {  
+    &--xl {
+      padding: calc-space(3) calc-space(2);
+    }
   }
 }
