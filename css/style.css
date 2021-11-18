@@ -212,6 +212,9 @@ footer {
 footer a {
   color: inherit;
 }
+footer a:hover {
+  text-decoration: underline;
+}
 footer ul {
   display: flex;
   flex-direction: row;
