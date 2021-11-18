@@ -1,15 +1,18 @@
 #restaurant {
   position: relative;
-  padding-top:250px;
+  padding-top: 250px;
   &__cover {
     z-index: -1;
     img {
       position: absolute;
-      top:0;
+      top: 0;
       left: 0;
-      width: 100%;
+      min-width: 100%;
       object-fit: cover;
     }
+  }
+  h2 {
+    text-align: left;
   }
 }
 
@@ -17,36 +20,31 @@
   border-radius: $border-radius $border-radius 0 0;
   background: $background-greylight;
   font-size: 0.95rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  flex: 1 1 auto;
   padding: calc-space(4) calc-space(3);
   padding-bottom: calc-space(8);
-
   &__submit {
     margin: 0 auto;
   }
-
   &__title {
-    display:flex;
+    display: flex;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: space-between;
+    width: 100%;
   }
-
+  section {
+    width: 100%;
+  }
   h2 {
     font-size: 1rem;
     font-weight: 400;
     text-transform: uppercase;
-
     &::after {
-      content:"";
+      content: "";
       display: block;
-      margin-top:5px;
-      margin-bottom:calc-space(2);
-      width:40px;
+      margin-top: 5px;
+      margin-bottom: calc-space(2);
+      width: 40px;
       border-bottom: 3px solid $background-success;
     }
   }
