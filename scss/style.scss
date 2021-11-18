@@ -3,6 +3,9 @@
 @import './utils/mixins';
 @import './utils/functions';
 
+/* Theme SCSS */
+@import './themes/colors';
+
 /* global SCSS */
 @import './base/base';
 
