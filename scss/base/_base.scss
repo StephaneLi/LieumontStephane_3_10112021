@@ -1,16 +1,14 @@
+// Base CSS html
 * {
   box-sizing: border-box;
 }
 
 body {
   @include font-face(Roboto);
+  @include flex(column, space-between, stretch);
   width: 100%;
   margin:0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  padding: 0;  
   min-height: 100vh;
 }
 
@@ -49,17 +47,11 @@ h2 {
   max-width: $screen-lg;
 
   &--flexrow {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    @include flex(row);
   }
 
   &--flexcol {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column);
   }
 
   &--xl {

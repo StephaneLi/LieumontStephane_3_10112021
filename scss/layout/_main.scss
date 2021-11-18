@@ -1,7 +1,5 @@
+// Layout main CSS
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: nowrap;
+  @include flex(column, center, stretch, nowrap);
   overflow: hidden;
 }

@@ -1,8 +1,7 @@
+// Breakpoint for tablets
 @media (max-width: $screen-md) {
   .features-list {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column);
 
     &_item {
       width: auto;
@@ -24,6 +23,7 @@
   }
 }
 
+// Breakpoint for phones
 @media (max-width: $screen-sm) {
   h2 {
     text-align: left;
@@ -41,9 +41,7 @@
 
 
   .list-cards {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(column);
 
     .card {
       width: 100%;

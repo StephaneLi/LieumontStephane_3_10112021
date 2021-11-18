@@ -1,10 +1,9 @@
+// section restaurant menu
 #restaurant {
   position: relative;
   padding-top: 250px;
   &__cover {
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include absolute();
     min-height:270px;
     max-height: 350px;
     height: 30vw;
@@ -20,6 +19,7 @@
   }
 }
 
+// section form select dishes
 #form-restaurant {
   border-radius: $border-radius $border-radius 0 0;
   background: $background-greylight;
@@ -31,10 +31,7 @@
     margin: 0 auto;
   }
   &__title {
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
+    @include flex(row, space-between, start, nowrap);
     width: 100%;
   }
   section {
