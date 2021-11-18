@@ -4,6 +4,7 @@
 /* SPACES REFERENCES */
 /* CSS REFERENCES */
 /* CSS COMPONENT */
+/* CSS ANIMATIONS */
 /* global SCSS */
 * {
   box-sizing: border-box;
@@ -569,6 +570,34 @@ footer .foot-title svg {
   justify-content: space-between;
   overflow: hidden;
   cursor: pointer;
+  animation: dish-show 500ms ease-out both;
+}
+.dishes-list .dish--1 {
+  animation-delay: 166.6666666667ms;
+}
+.dishes-list .dish--2 {
+  animation-delay: 333.3333333333ms;
+}
+.dishes-list .dish--3 {
+  animation-delay: 500ms;
+}
+.dishes-list .dish--4 {
+  animation-delay: 666.6666666667ms;
+}
+.dishes-list .dish--5 {
+  animation-delay: 833.3333333333ms;
+}
+.dishes-list .dish--6 {
+  animation-delay: 1000ms;
+}
+.dishes-list .dish--7 {
+  animation-delay: 1166.6666666667ms;
+}
+.dishes-list .dish--8 {
+  animation-delay: 1333.3333333333ms;
+}
+.dishes-list .dish--9 {
+  animation-delay: 1500ms;
 }
 .dishes-list .dish__desc {
   padding-top: 15px;
@@ -655,6 +684,16 @@ footer .foot-title svg {
     transform: rotate(360deg);
   }
 }
+@keyframes dish-show {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 .loader {
   position: fixed;
   display: flex;
@@ -679,13 +718,13 @@ footer .foot-title svg {
   animation: fadein 500ms ease-in-out both;
 }
 .loader__item--1 {
-  animation-delay: 166.6666666667ms;
+  animation-delay: 83.3333333333ms;
 }
 .loader__item--2 {
-  animation-delay: 333.3333333333ms;
+  animation-delay: 166.6666666667ms;
 }
 .loader__item--3 {
-  animation-delay: 500ms;
+  animation-delay: 250ms;
 }
 .loader__item__spinner {
   animation: rotate 700ms linear infinite;

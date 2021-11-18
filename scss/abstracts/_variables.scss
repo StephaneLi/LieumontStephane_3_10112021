@@ -31,7 +31,9 @@ $card-max-height: 250px;
 $card-min-width: 270px;
 $card-max-width: 500px;
 
+/* CSS ANIMATIONS */
 $anim-loader-dur: 1000ms;
 $anim-rotate-spinner: 700ms;
 $anim-fadein-dur: $anim-loader-dur/2;
-$anim-fadein-delay: $anim-fadein-dur / 3;
+$anim-fadein-delay: $anim-fadein-dur / 6;
+$anim-dish-show-dur: 500ms;
