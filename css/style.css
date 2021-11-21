@@ -713,27 +713,34 @@ footer .foot-title svg {
   height: 100%;
   border: none !important;
   border-radius: 0 20px 20px 0;
+  transition: background-color 0.3s ease-in-out;
   background-color: #99e2d0;
 }
-.dishes-list .dish__select [type=radio]:checked::after, .dishes-list .dish__select [type=radio]:not(:checked)::after {
+.dishes-list .dish__select [type=radio]::after {
+  font-family: "Material Icons";
+  color: white;
   height: 24px;
   width: 65px;
   font-size: 24px;
   line-height: 24px;
   text-align: center;
-  font-family: "Material Icons";
   content: "\e86c";
-  color: white;
   transform: rotate(0deg);
 }
-.dishes-list .dish__select [type=radio]:not(:checked)::after {
-  content: "\e836";
+.dishes-list .dish__select [type=radio]:not(:checked)::before {
+  background-color: #99e2d0;
+}
+.dishes-list .dish__select [type=radio]:checked::before {
+  background-color: #FF79DA;
+}
+.dishes-list .dish__select [type=radio]:checked::after {
+  animation: pop 100ms ease-in-out 100ms !important;
 }
 .dishes-list .dish:hover .dish__select__checkbox {
   width: 65px;
 }
 .dishes-list .dish:hover .dish__select__checkbox input[type=radio]::after {
-  animation: rotate 500ms backwards ease-in-out 100ms;
+  animation: rotate 500ms ease-in-out 100ms both;
   transform: rotate(0deg);
 }
 
@@ -743,6 +750,17 @@ footer .foot-title svg {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: translateZ(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 @keyframes dish-show {

@@ -79,23 +79,32 @@
           height: 100%;
           border: none!important;
           border-radius: 0 $border-radius $border-radius 0;
-          background-color: $background-success;
-          
+          transition: background-color .3s ease-in-out;
+          background-color: $background-success;          
         }
 
-        &:checked::after, &:not(:checked)::after {
+        &::after {
+          font-family: "Material Icons";
+          color:white;
           height: 24px;
-          width: 65px;
+          width: 65px; 
           font-size: 24px;
           line-height: 24px;
           text-align: center;
-          font-family: "Material Icons";
           content: "\e86c";
-          color:white;
-          transform: rotate(0deg);               
+          transform: rotate(0deg); 
         }
-        &:not(:checked)::after {
-          content: "\e836";
+
+        &:not(:checked)::before {
+          background-color: $background-success;  
+        }
+
+        &:checked::before {
+          background-color: $secondary;  
+        }
+
+        &:checked::after {
+          animation: pop 100ms ease-in-out 100ms!important; 
         }
       }
     }
@@ -104,7 +113,7 @@
       width: 65px;
 
       & input[type="radio"]::after{
-        animation: rotate 500ms backwards ease-in-out 100ms;
+        animation: rotate 500ms ease-in-out 100ms both;
         transform: rotate(0deg);
       }
     }
@@ -117,6 +126,18 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: translateZ(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
